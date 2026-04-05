@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
 import { ProtectedRoute } from '../protector/ProtectedRoute';
 import { withDifficulty } from '../hoc/withDifficulty';
+import Level1Game from '../pages/Level1Game';
 
 const GenericLevel = ({ difficulty }) => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export const AppRoutes = () => {
         path="/level-1" 
         element={
           <ProtectedRoute requiredLevel={1}>
-            <Level1 />
+            <Level1Game />
           </ProtectedRoute>
         } 
       />

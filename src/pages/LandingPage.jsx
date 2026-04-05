@@ -4,9 +4,9 @@ import { GameStateContext } from '../context/GameStateContext';
 import { Lock, Unlock } from 'lucide-react';
 
 export default function LandingPage() {
-  const [viewState, setViewState] = useState('hero'); // 'hero', 'login', 'dashboard'
-  const [tempName, setTempName] = useState('');
   const { playerName, setPlayerName, rank, highestUnlockedLevel } = useContext(GameStateContext);
+  const [viewState, setViewState] = useState(playerName ? 'dashboard' : 'hero'); // skip to dashboard if already logged in
+  const [tempName, setTempName] = useState('');
   const navigate = useNavigate();
 
   const handleHeroClick = () => setViewState('login');
